@@ -641,6 +641,7 @@
   background: url("https://images.unsplash.com/reserve/D9xlw7UxTBqQw5sLf8cJ_reef%20insp-72.jpg?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=f8b43eb2b7bf0530d7622e246a5da1cb") no-repeat center center fixed;
   background-size: cover;
   color: #545454;
+  margin-bottom: 5%;
 }
 
 .intro {
