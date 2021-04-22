@@ -363,6 +363,7 @@
  .page.page-center {
    background-image: url(https://c2.staticflickr.com/6/5016/5474953677_e90dfcbb71_b.jpg);
    background-attachment: fixed;
+   height: 70vh;
  }
  
  .page-header {
@@ -387,7 +388,9 @@
    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24);
    display: flex;
    flex-flow: column wrap;
-   margin-right: 50px;
+   margin-right: 10%;
+   margin-left:5%;
+   margin-top: 10%;
  }
  article > div {
    flex: 1;
