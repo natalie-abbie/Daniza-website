@@ -212,7 +212,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 
-
 @supports (display: grid) {
   .grid-container {
     display: grid;
@@ -229,15 +228,15 @@ h1, h2, h3, h4, h5, h6, figure {
   }
 
   .grid-item  {
-    color: rgb(12, 11, 11);
-    background: #1e800f;
+    color: rgb(250, 246, 246);
+    background: #26881d;
     /* padding: 3.5em 1em; */
     font-size: 1em;
     font-weight: 400;
   }
 
   .header {
-    background-color: #1e800f;
+    background-image:linear-gradient(#9edd95,#1e800f);
     grid-area: header;
     padding: 1em;
   }
@@ -454,11 +453,9 @@ h1, h2, h3, h4, h5, h6, figure {
               width: 100%; } }
 
 .colorlib-light-grey {
-  background: #fafafa; }
-  .colorlib-blog{
-    background-color: #00BBF0;
-  }
-
+  background-image: linear-gradient(black, yellow, rgb(129, 5, 5)); 
+}
+ 
 
 #colorlib-hotel,
 .colorlib-tour,
@@ -473,7 +470,7 @@ h1, h2, h3, h4, h5, h6, figure {
   width: 100%;
   display: block;
   float: left;
-  padding: 9em 0;
+  padding: 6em 0;
   clear: both; }
   @media screen and (max-width: 768px) {
     #colorlib-hotel,
@@ -637,6 +634,19 @@ h1, h2, h3, h4, h5, h6, figure {
   background:url("images/");
 
 } */
+
+.grid-item .padded-dropcap {
+  padding-left: 5px;
+  padding-right: 10px;
+  float: left;
+  position: relative;
+  top: -0.30em;
+  margin-bottom: -0.5em;
+  margin-left: -6px;
+  margin-right: 2px;
+  font-size: 100px;
+  color: green;
+}
   .aside-stretch:after {
     position: absolute;
     top: 0;
@@ -708,8 +718,10 @@ h1, h2, h3, h4, h5, h6, figure {
         margin-bottom: 10px; }
       .tour-wrap .tour-entry .desc .city {
         display: block;
-        color: #b3b3b3;
+        color: #110303;
         margin-bottom: 5px; }
+
+        
       .tour-wrap .tour-entry .desc .price {
         color: #000;
         font-size: 20px; }
