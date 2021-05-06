@@ -17,4 +17,6 @@ jobs:
             server: ftp.danizatours.com
             username: myFtpUserName
             password: ${{ secrets.ftp_password }}
+        
+            server dir: /public_html/danizatours.co.ug/
 
