@@ -1,6 +1,0 @@
----
-deployment:
-  tasks:
-    - export DEPLOYPATH=/home/danizatours/public_html/danizatours.co.ug/
-    - /bin/cp index.html $DEPLOYPATH
-    - /bin/cp styles/landingpage.css $DEPLOYPATH
