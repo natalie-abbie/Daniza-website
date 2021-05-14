@@ -534,16 +534,14 @@
     }
   }
 }
-* {
+/* * {
   box-sizing: border-box;
 }
 *::before, *::after {
   box-sizing: border-box;
-}
+} */
 
-.landing{
-  background:url("images/chimpanze.jpg");
-}
+
 
 a {
   color: #8d8d8d;
@@ -597,7 +595,7 @@ img {
 }
 .intro .title {
   display: inline-block;
-  font-size: 2rem;
+  font-size: 10px;
   font-weight: 500;
   line-height: 1.1;
   text-decoration: underline;
@@ -610,8 +608,9 @@ img {
 .description {
   position: relative;
   z-index: 1;
-  margin: 1rem 0 1.5rem 0;
-  font-size: 1rem;
+  margin: 1rem 0 1rem 0;
+  font-size: 10px;
+  color:black;
   opacity: 0;
   animation: fadeIn 0.8s 0.6s ease forwards;
 }
