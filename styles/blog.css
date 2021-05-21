@@ -756,11 +756,8 @@ h1, h2, h3, h4, h5, h6, figure {
 .js .animate-box {
   opacity: 0; }
 
-a {
-  color: inherit;
-}
 
-.cards-wrapper {
+.boxs-wrapper {
   display: grid;
   justify-content: center;
   align-items: center;
@@ -773,7 +770,7 @@ a {
   background-attachment: fixed;
 }
 
-.card {
+.box {
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   height: 20em;
@@ -795,28 +792,28 @@ a {
   text-decoration: none;
 }
 
-.card:hover {
+.box:hover {
   transform: rotate(0);
 }
 
-.card h1 {
+.box h1 {
   margin: 0;
   font-size: 1.5em;
   line-height: 1.2em;
 }
 
-.card p {
+.box p {
   font-size: 0.75em;
   font-family: 'Open Sans';
   margin-top: 0.5em;
   line-height: 2em;
 }
 
-.card .tags {
+.box .tags {
   display: flex;
 }
 
-.card .tags .tag {
+.box .tags .tag {
   font-size: 0.75em;
   background: #914406;
   border-radius: 0.3rem;
@@ -826,12 +823,12 @@ a {
   transition: all, 0.5s;
 }
 
-.card:hover .tags .tag {
+.box:hover .tags .tag {
   background: #914406;
   color: white;
 }
 
-.card .date {
+.box .date {
   position: absolute;
   top: 0;
   right: 0;
@@ -841,7 +838,7 @@ a {
   opacity: .8;
 }
 
-.card:before, .card:after {
+.box:before, .box:after {
   content: '';
   transform: scale(0);
   transform-origin: top left;
@@ -854,27 +851,27 @@ a {
   transition-timing-function: ease-in-out;
 }
 
-.card:before {
+.box:before {
   /* background: rgb(85, 66, 66); */
   width: 250%;
   height: 250%;
 }
 
-.card:after {
+.box:after {
   background:#fff;
   width: 200%;
   height: 200%;
 }
 
-.card:hover {
+.box:hover {
   color: #0c0c0c;
 }
 
-.card:hover:before, .card:hover:after {
+.box:hover:before, .box:hover:after {
   transform: scale(1);
 }
 
-.card-grid-space .num {
+.box-grid-space .num {
   font-size: 3em;
   margin-bottom: 1.2rem;
   margin-left: 1rem;
@@ -884,29 +881,27 @@ a {
 
 /* MEDIA QUERIES */
 @media screen and (max-width: 1285px) {
-  .cards-wrapper {
+  .boxs-wrapper {
     grid-template-columns: 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 900px) {
-  .cards-wrapper {
+  .boxs-wrapper {
     grid-template-columns: 1fr;
   }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
+
+  .box-grid-space .num {
     margin-left: 0;
     text-align: center;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .cards-wrapper {
+  .boxs-wrapper {
     padding: 4rem 2rem;
   }
-  .card {
+  .box {
     max-width: calc(100vw - 4rem);
   }
 }
