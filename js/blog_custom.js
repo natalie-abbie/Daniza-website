@@ -1,196 +1,125 @@
-/* JS Document */
+var bg = document.querySelector('.item-bg');
+var items = document.querySelectorAll('.news__item');
+var item = document.querySelector('.news__item');
 
-/******************************
+function cLog(content) {
+    console.log(content)
+}
 
-[Table of Contents]
+if($(window).width() > 800) {
+    $(document).on("mouseover", ".news__item", function (_event, _element) {
 
-1. Vars and Inits
-2. Set Header
-3. Init Menu
-4. Init Lightbox
-5. Init Search Form
+        var newsItem = document.querySelectorAll('.news__item');
+        newsItem.forEach(function (element, index) {
+            element.addEventListener('mouseover', function () {
+                var x = this.getBoundingClientRect().left;
+                var y = this.getBoundingClientRect().top;
+                var width = this.getBoundingClientRect().width;
+                var height = this.getBoundingClientRect().height;
+
+                $('.item-bg').addClass('active');
+                $('.news__item').removeClass('active');
+                // $('.news__item').removeClass('active');
 
 
-******************************/
+                bg.style.width = width + 'px';
+                bg.style.height = height + 'px';
+                bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
+            });
 
-$(document).ready(function()
-{
-	"use strict";
+            element.addEventListener('mouseleave', function () {
+                $('.item-bg').removeClass('active');
+                $('.news__item').removeClass('active');
+            });
 
-	/* 
+        });
 
-	1. Vars and Inits
+    });
+}
 
-	*/
 
-	var menu = $('.menu');
-	var menuActive = false;
-	var header = $('.header');
-	var searchActive = false;
+var swiper = new Swiper('.news-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    loop: true,
+    centeredSlides: true,
+    keyboard: true,
+    spaceBetween: 0,
+    slidesPerView: 'auto',
+    speed: 300,
+    coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 0,
+        modifier: 3,
+        slideShadows: false
+    },
+    breakpoints: {
+        480: {
+            spaceBetween: 0,
+            centeredSlides: true
+        }
+    },
+    simulateTouch: true,
+    navigation: {
+        nextEl: '.news-slider-next',
+        prevEl: '.news-slider-prev'
+    },
+    pagination: {
+        el: '.news-slider__pagination',
+        clickable: true
+    },
+    on: {
+        init: function () {
+            var activeItem = document.querySelector('.swiper-slide-active');
 
-	setHeader();
+            var sliderItem = activeItem.querySelector('.news__item');
 
-	$(window).on('resize', function()
-	{
-		setHeader();
-	});
+            $('.swiper-slide-active .news__item').addClass('active');
 
-	$(document).on('scroll', function()
-	{
-		setHeader();
-	});
+            var x = sliderItem.getBoundingClientRect().left;
+            var y = sliderItem.getBoundingClientRect().top;
+            var width = sliderItem.getBoundingClientRect().width;
+            var height = sliderItem.getBoundingClientRect().height;
 
-	initMenu();
-	initLightbox();
-	initSearchForm();
 
-	/* 
+            $('.item-bg').addClass('active');
 
-	2. Set Header
-
-	*/
-
-	function setHeader()
-	{
-		if(window.innerWidth < 992)
-		{
-			if($(window).scrollTop() > 100)
-			{
-				header.addClass('scrolled');
-			}
-			else
-			{
-				header.removeClass('scrolled');
-			}
-		}
-		else
-		{
-			if($(window).scrollTop() > 100)
-			{
-				header.addClass('scrolled');
-			}
-			else
-			{
-				header.removeClass('scrolled');
-			}
-		}
-		if(window.innerWidth > 991 && menuActive)
-		{
-			closeMenu();
-		}
-	}
-
-	/* 
-
-	3. Init Menu
-
-	*/
-
-	function initMenu()
-	{
-		if($('.hamburger').length && $('.menu').length)
-		{
-			var hamb = $('.hamburger');
-			var close = $('.menu_close_container');
-
-			hamb.on('click', function()
-			{
-				if(!menuActive)
-				{
-					openMenu();
-				}
-				else
-				{
-					closeMenu();
-				}
-			});
-
-			close.on('click', function()
-			{
-				if(!menuActive)
-				{
-					openMenu();
-				}
-				else
-				{
-					closeMenu();
-				}
-			});
-		}
-	}
-
-	function openMenu()
-	{
-		menu.addClass('active');
-		menuActive = true;
-	}
-
-	function closeMenu()
-	{
-		menu.removeClass('active');
-		menuActive = false;
-	}
-
-	/*
-
-	4. Init Lightbox
-
-	*/
-
-	function initLightbox()
-	{
-		if($('.gallery_item').length)
-		{
-			$('.colorbox').colorbox(
-			{
-				rel:'colorbox',
-				photo: true
-			});
-		}
-	}
-
-	/* 
-
-	5. Init Search Form
-
-	*/
-
-	function initSearchForm()
-	{
-		if($('.search_form').length)
-		{
-			var searchForm = $('.search_form');
-			var searchInput = $('.search_content_input');
-			var searchButton = $('.content_search');
-
-			searchButton.on('click', function(event)
-			{
-				event.stopPropagation();
-
-				if(!searchActive)
-				{
-					searchForm.addClass('active');
-					searchActive = true;
-
-					$(document).one('click', function closeForm(e)
-					{
-						if($(e.target).hasClass('search_content_input'))
-						{
-							$(document).one('click', closeForm);
-						}
-						else
-						{
-							searchForm.removeClass('active');
-							searchActive = false;
-						}
-					});
-				}
-				else
-				{
-					searchForm.removeClass('active');
-					searchActive = false;
-				}
-			});	
-		}
-	}
+            bg.style.width = width + 'px';
+            bg.style.height = height + 'px';
+            bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
+        }
+    }
 });
+
+swiper.on('touchEnd', function () {
+    $('.news__item').removeClass('active');
+    $('.swiper-slide-active .news__item').addClass('active');
+});
+
+swiper.on('slideChange', function () {
+    $('.news__item').removeClass('active');
+});
+
+swiper.on('slideChangeTransitionEnd', function () {
+    $('.news__item').removeClass('active');
+    var activeItem = document.querySelector('.swiper-slide-active');
+
+    var sliderItem = activeItem.querySelector('.news__item');
+
+    $('.swiper-slide-active .news__item').addClass('active');
+
+    var x = sliderItem.getBoundingClientRect().left;
+    var y = sliderItem.getBoundingClientRect().top;
+    var width = sliderItem.getBoundingClientRect().width;
+    var height = sliderItem.getBoundingClientRect().height;
+
+
+    $('.item-bg').addClass('active');
+
+    bg.style.width = width + 'px';
+    bg.style.height = height + 'px';
+    bg.style.transform = 'translateX(' + x + 'px ) translateY(' + y + 'px)';
+});
+
+
