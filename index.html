@@ -21,7 +21,18 @@
     <link rel="stylesheet" href="styles/lightbox.css" />
   </head>
 
+  <!-- <div class="loading"> -->
+    <div id="loader-wrapper">
+      <div id="loader"></div>
+          <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+     
+      
+    </div>
+
   <body>
+
+  
     <div id="page-wraper">
       <!-- Sidebar Menu -->
       <div class="responsive-nav">
@@ -40,7 +51,7 @@
               <ul class="main-menu">
                 <li><a href="#section1">ABOUT DANIZA LIMITED</a></li>
                 <li><a href="#section2">MESSAGE FROM THE MD</a></li>
-                <!-- <li><a href="#section3">OUR HIGHLIGHTS</a></li> -->
+               
                 <li><a href="#section4">CONTACT US </a></li>
               </ul>
             </nav>
@@ -60,14 +71,37 @@
               </ul>
             </div>
             <div class="copyright-text">
-              <!-- <p>Copyright 2019 Reflux Design</p> -->
+            
             </div>
           </div>
         </div>
       </div>
 
+      
+     
       <section class="section about-me" data-section="section1">
         <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="service-item" style="background-image: url(images/Executive-cars.jpg);background-size:cover;">
+                <div class="first-service-icon service-icon"></div>
+                <h4>Car rental</h4>
+                <div class="white-button">
+                  <a href="#">VISIT PAGE FOR MORE</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-item" style="background-image: url(images/gorilla-tour.jpg);background-size: cover;">
+                <div class="second-service-icon service-icon"></div>
+                <h4>Tours &amp;safari</h4>
+                <div class="white-button">
+                  <a href="tours.html">VISIT PAGE FOR MORE</a>
+                </div>
+              </div>
+            </div>
+            </div>
+        
           <div class="section-heading">
             <h2>EXPLORE Daniza </h2>
             <div class="line-dec"></div>
@@ -89,45 +123,6 @@
             
           </div>  
           
-          <div class="sectiontitle">
-            <h2>Projects statistics</h2>
-            <span class="headerLine"></span>
-        </div>
-        <div id="projectFacts" class="sectionClass">
-            <div class="fullWidth eight columns">
-                <div class="projectFactsWrap ">
-                    <div class="item wow fadeInUpBig animated animated" data-number="10" style="visibility: visible;">
-                        <i class="fa fa-briefcase"></i>
-                        <p id="number1" class="number">10</p>
-                        <br>
-                        <span></span>
-                        <p>Car rental Projects </p>
-                    </div>
-                    <div class="item wow fadeInUpBig animated animated" data-number="70" style="visibility: visible;">
-                        <i class="fa fa-car"></i>
-                        <p id="number2" class="number">70</p>
-                        <br>
-                        <span></span>
-                        <p>Fleet capacity</p>
-                    </div>
-                    <div class="item wow fadeInUpBig animated animated" data-number="15" style="visibility: visible;">
-                        <i class="fa fa-ship"></i>
-                        <br>
-                        <p id="number3" class="number">15</p>
-                        <br>
-                        <span></span>
-                        <p>Tourism projects </p>
-                    </div>
-                    <div class="item wow fadeInUpBig animated animated" data-number="30" style="visibility: visible;">
-                        <i class="fa fa-map-marker"></i>
-                        <p id="number4" class="number">7</p>
-                        <br>
-                        <span></span>
-                        <p>Regions</p>
-                    </div>
-                </div>
-            </div>
-        </div>
         
       </section>
 
@@ -154,37 +149,7 @@
           </div>
         </div>
 
-          <div class="row">
-            <div class="col-md-6">
-              <div class="service-item" style="background-image: url(images/vehicles.jpg);background-size:cover;">
-                <div class="first-service-icon service-icon"></div>
-                <h4>Car rental</h4>
-                <!-- <p>
-                  Our reservations team will help you design the perfect trip. we carefully select for you the comfort level accommodation to provide the perfect balance 
-			        	between price of quality offering private ensuite facilities. 
-			          Daniza offers unique tailor made tours, Group trips to Uganda and we also operate our own fleet of vehicles, with our own drivers and professional safari guides who
-			           ensure your safety and comfort
-                </p> -->
-                <div class="white-button">
-                  <a href="#">VISIT PAGE FOR MORE</a>
-                </div>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="service-item" style="background-image: url(images/gorilla-tour.jpg);background-size: cover;">
-                <div class="second-service-icon service-icon"></div>
-                <h4>Tours &amp;safari</h4>
-                <!-- <p>
-                  Our reservations team will help you design the perfect trip. we carefully select for you the comfort level accommodation to provide the perfect balance 
-                  between price of quality offering private ensuite facilities. 
-                Daniza offers unique tailor made tours, Group trips to Uganda and we also operate our own fleet of vehicles, with our own drivers and professional safari guides who
-                 ensure your safety and comfort
-                </p> -->
-                <div class="white-button">
-                  <a href="tours.html">VISIT PAGE FOR MORE</a>
-                </div>
-              </div>
-            </div>
+         
       </section>
     
 <!-- 
@@ -285,6 +250,8 @@
         </div>
       </section>
     </div>
+    </div>
+ 
 
     <!-- Scripts -->
     <script src="jquery/jquery.min.js"></script>
@@ -294,6 +261,15 @@
     <script src="js/custom.js"></script>
     <script src="js/main.js"></script>
     <script>
+
+      // loader
+      $(document).ready(function() {  
+   setTimeout(function() {
+       $('body').addClass('loaded');
+   }, 3500);
+
+});
+// end
       $(".main-menu li:first").addClass("active");
 
       var showSection = function showSection(section, isAnimate) {
